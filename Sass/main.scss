@@ -1,0 +1,279 @@
+@import "reset.scss";
+@import "mixin.scss";
+@import "button.scss";
+
+body {
+  padding-inline: 18px;
+  min-height: 100vh;
+  background: linear-gradient(127.64deg, #2a3742 7.36%, #27394a 100%, #353f48 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  .creditos {
+    font-family: "Fira Sans";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 19px;
+    color: #ffffff;
+    padding-bottom: 40px;
+  }
+}
+.card {
+  margin-top: 6rem;
+  padding: 2.4rem;
+  width: 100%;
+  max-width: 52rem;
+  height: 100%;
+  max-height: 72rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 6rem;
+  .info {
+    .imagem {
+      img {
+        border-radius: 50%;
+        border: 6px solid #fff;
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 24px;
+      }
+    }
+    h1 {
+      font-family: "Fira Sans";
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 50px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 130%;
+      margin-bottom: 15px;
+      color: #cfd8dc;
+    }
+    p {
+      font-family: "Rubik", sans-serif;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 26px;
+      color: #f3de57;
+    }
+  }
+  .buttons {
+    width: 100%;
+    max-width: 36rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    li {
+      a {
+        font-family: "Rubik", sans-serif;
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 1.9rem;
+        background-color: #1177ce;
+        height: 60px;
+        transition: all 0.5s;
+
+        &:hover {
+          // opacity: 90%;
+          background-color: #418cce;
+        }
+        .icone {
+          img {
+            width: 4rem;
+            height: 4rem;
+          }
+        }
+        span {
+          color: #fff;
+          font-family: "Rubik", sans-serif;
+          font-weight: 600;
+          font-size: 2.4rem;
+          line-height: 1.9rem;
+        }
+        &.portfolio {
+          color: #f5f5f5;
+          background-color: #676771;
+          &:hover {
+            background-color: #848588;
+          }
+        }
+      }
+    }
+  }
+  @include responsive(800px) {
+    margin-top: 15rem;
+  }
+  @include responsive(440px) {
+    max-height: 75.5rem;
+    margin-top: 12rem;
+    .info {
+      p {
+        line-height: 36px;
+      }
+    }
+  }
+  @include responsive(440px) {
+    gap: 3rem;
+    .info {
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.redes {
+  position: absolute;
+  left: 0;
+  ul {
+    width: 100%;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2.4rem;
+    position: relative;
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        height: 10rem;
+        border-radius: 0px 8px 8px 0px;
+        color: white;
+
+        img {
+          width: 5rem;
+        }
+        &#linkedin {
+          background: #0077b7;
+          width: 10rem;
+          transition: width 0.7s;
+          &::after {
+            content: "Linkedin";
+            font-size: 2rem;
+            font-weight: 400;
+            display: none;
+          }
+          &:hover {
+            width: 20rem;
+            &::after {
+              display: block;
+            }
+          }
+        }
+
+        &#github {
+          background: #000000;
+          width: 10rem;
+          transition: all 0.6s;
+          &::after {
+            content: "GitHub";
+            font-size: 2rem;
+            font-weight: 400;
+            display: none;
+          }
+          &:hover {
+            width: 20rem;
+            &::after {
+              display: block;
+            }
+          }
+        }
+        &#instagram {
+          background: #e61f66;
+          width: 10rem;
+          transition: all 0.6s;
+          &::after {
+            content: "Instagram";
+            font-size: 2rem;
+            font-weight: 400;
+            display: none;
+          }
+          &:hover {
+            width: 20rem;
+            &::after {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include responsive(1000px) {
+    ul {
+      li {
+        a {
+          &#linkedin {
+            &:hover {
+              width: 10rem;
+              &::after {
+                display: none;
+              }
+            }
+          }
+          &#github {
+            &:hover {
+              width: 10rem;
+              &::after {
+                display: none;
+              }
+            }
+          }
+          &#instagram {
+            &:hover {
+              width: 10rem;
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include responsive(800px) {
+    top: 0;
+    left: calc(50% - 17.4rem);
+    ul {
+      flex-direction: row;
+      li {
+        a {
+          border-radius: 0px 0px 8px 8px;
+        }
+      }
+    }
+  }
+  @include responsive(440px) {
+    left: calc(50% - 14.4rem);
+    ul {
+      li {
+        a {
+          img {
+            width: 3.6rem;
+          }
+          &#linkedin,
+          &#github,
+          &#instagram {
+            width: 8rem;
+            height: 8rem;
+          }
+        }
+      }
+    }
+  }
+}
